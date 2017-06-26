@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--initialLayout :管理的布局-->
+<!--updatePeriodMillis :更新widget的时间间隔-->
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:initialLayout="@layout/process_widget"
+                    android:minHeight="72.0dip"
+                    android:minWidth="200.0dip"
+                    android:resizeMode="horizontal|vertical"
+                    android:updatePeriodMillis="0"/>

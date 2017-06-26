@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+
+    <LinearLayout
+        android:background="@color/colorBackground"
+        android:id="@+id/ll_weather_nor"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#484e61">
+
+            <Button
+                android:id="@+id/change_city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="#484e61"
+                android:text="选择城市"
+                android:textColor="#ffffff"/>
+
+            <TextView
+                android:id="@+id/city_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textColor="#ffffff"
+                android:textSize="24sp"/>
+
+            <Button
+                android:id="@+id/refresh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:background="#484e61"
+                android:text="刷新"
+                android:textColor="#ffffff"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/colorBackground">
+
+            <TextView
+                android:id="@+id/publish_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:text="发布时间"
+                android:textColor="#ffffff"
+                android:textSize="18sp"
+                />
+
+            <RelativeLayout
+                android:id="@+id/weather_info_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+
+                <TextView
+                    android:id="@+id/weather"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_centerHorizontal="true"
+                    android:text="晴"
+                    android:textColor="#ffffff"
+                    android:textSize="40sp"/>
+
+                <TextView
+                    android:id="@+id/temp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/weather"
+                    android:layout_marginRight="10dp"
+                    android:text="23"
+                    android:textColor="#ffffff"
+                    android:textSize="40sp"/>
+
+                <TextView
+                    android:id="@+id/day_weather"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/temp"
+                    android:layout_below="@id/weather"
+                    android:layout_toRightOf="@id/temp"
+                    android:text="22℃-4℃"
+                    android:textColor="#fff"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/weather_info_layout"
+                android:layout_marginTop="10dp"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/tv_wind"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="西北风"
+                    android:textColor="#fff"/>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:background="@color/colorBackground"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="50dp">
+            <TextView
+                android:id="@+id/tv_date1"
+                android:textColor="#fff"
+                android:textSize="20sp"
+                android:text="明天"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"/>
+            <TextView
+                android:textSize="20sp"
+                android:id="@+id/tv_date2"
+                android:textColor="#fff"
+                android:text="后天"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"/>
+            <TextView
+                android:textSize="20sp"
+                android:id="@+id/tv_date3"
+                android:textColor="#fff"
+                android:text="后后天"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:background="@color/colorBackground"
+            android:layout_gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="50dp">
+            <ImageView
+                android:id="@+id/iv_icon1"
+                android:text="明天"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"/>
+            <ImageView
+                android:id="@+id/iv_icon2"
+                android:text="后天"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"/>
+            <ImageView
+                android:id="@+id/iv_icon3"
+                android:text="后后天"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBackground"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="----上拉加载更多----"
+                android:textColor="#fff"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="3dp"
+                android:src="@drawable/arrow"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:background="@color/colorBackground"
+        android:id="@+id/sl_weather_detail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorBackground"
+            android:divider="@drawable/divider"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:showDividers="end">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="生活建议"
+                android:textColor="#fff"
+                android:textSize="20sp"/>
+            <View
+                android:background="#fff"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="紫外线指数"
+                    android:textColor="#fff"/>
+
+                <TextView
+                    android:id="@+id/uv_index"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:paddingRight="10dp"
+                    android:text="Error"
+                    android:textColor="#fff"/>
+
+            </LinearLayout>
+            <View
+                android:background="#fff"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="户外运动"
+                    android:textColor="#fff"/>
+
+                <TextView
+                    android:id="@+id/exercise_index"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:paddingRight="10dp"
+                    android:text="Error"
+                    android:textColor="#fff"/>
+            </LinearLayout>
+
+            <View
+                android:background="#fff"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="旅游建议"
+                    android:textColor="#fff"/>
+
+                <TextView
+                    android:id="@+id/travel_index"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:paddingRight="10dp"
+                    android:text="Error"
+                    android:textColor="#fff"/>
+
+            </LinearLayout>
+
+            <View
+                android:background="#fff"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="10dp">
+                <TextView
+                    android:gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:padding="5dp"
+                    android:text="穿衣指数"
+                    android:textColor="#fff"/>
+
+                <TextView
+                    android:id="@+id/dressing_index"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="end|center_vertical"
+                    android:paddingRight="10dp"
+                    android:text="Error"
+                    android:textColor="#fff"/>
+
+            </LinearLayout>
+            <View
+                android:background="#fff"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <TextView
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:paddingTop="10dp"
+                android:text="穿衣建议"
+                android:textColor="#fff"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:gravity="center_vertical"
+                android:id="@+id/dressing_advice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="5dp"
+                android:text="适合穿短袖,适合穿短袖,适合穿短袖,适合穿短袖"
+                android:textColor="#fff"/>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:paddingTop="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/pen"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"/>
+
+                <TextView
+                    android:text="不要惧怕学习，知识是没有重量的，你永远可以轻易的带着它与你同行"
+                    android:id="@+id/tv_day_words"
+                    android:paddingLeft="35dp"
+                    android:paddingTop="10dp"
+                    android:textSize="20sp"
+                    android:textStyle="italic"
+                    android:paddingBottom="50dp"
+                    android:textColor="#fff"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

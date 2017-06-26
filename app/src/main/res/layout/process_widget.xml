@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#0000">
+
+    <FrameLayout
+        android:id="@+id/fl_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"/>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tv_city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/fl_icon"
+        android:textSize="20sp"
+        android:text="城市"
+        android:textColor="#fff"/>
+
+
+    <TextView
+        android:id="@+id/tv_publis_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/tv_city"
+        android:layout_alignBaseline="@id/tv_city"
+        android:text="发布时间"
+        android:textColor="#fff"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:layout_marginLeft="1dp"
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/tv_city"
+        android:layout_toRightOf="@id/tv_publis_time"
+        android:text="更新"
+        android:textColor="#fff"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/tv_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_publis_time"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/fl_icon"
+        android:text="当前温度"
+        android:textColor="#fff"
+        android:textSize="30sp"/>
+
+</RelativeLayout>
